@@ -1,440 +1,403 @@
-<!-- =========================
- FEELING JOY — PREMIUM SMART LINK 2.0
-========================= -->
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>FEELING JOY</title>
 
-<!-- Favicon -->
 <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/727/727245.png">
 
-<!-- Google Font -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-<!-- Font Awesome Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 
 <style>
-
+/* Reset & Base */
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-scroll-behavior:smooth;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
 }
 
-html,body{
-width:100%;
-min-height:100%;
-overflow-x:hidden;
-font-family:'Poppins',sans-serif;
-background:#070b1a;
+html, body {
+    width:100%;
+    min-height:100vh;
+    font-family:'Poppins', sans-serif;
+    color: white;
+    background: #050816;
+    overflow-x: hidden;
 }
 
-/* Animated Gradient Background */
-body{
-background: linear-gradient(-45deg, #050816, #0a1024, #391562, #0037a3);
-background-size: 400% 400%;
-animation: gradientBG 15s ease infinite;
-display:flex;
-justify-content:center;
-padding:30px 16px;
+/* Advanced Animated Background */
+body {
+    background: radial-gradient(circle at 15% 50%, rgba(91, 29, 147, 0.4), transparent 50%),
+                radial-gradient(circle at 85% 30%, rgba(0, 87, 255, 0.4), transparent 50%),
+                linear-gradient(135deg, #050816, #0a1024, #12182f);
+    background-size: 200% 200%;
+    animation: bgMovement 15s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
 }
 
-@keyframes gradientBG {
+@keyframes bgMovement {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-/* Grid Texture */
-body::before{
-content:"";
-position:fixed;
-inset:0;
-background-image:
-linear-gradient(rgba(255,255,255,.02) 1px, transparent 1px),
-linear-gradient(90deg, rgba(255,255,255,.02) 1px, transparent 1px);
-background-size:40px 40px;
-pointer-events:none;
-z-index: 0;
+/* Grid Texture blending with GitHub feel */
+body::before {
+    content:"";
+    position:fixed;
+    inset:0;
+    background-image:
+        linear-gradient(rgba(255,255,255,.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.015) 1px, transparent 1px);
+    background-size: 30px 30px;
+    pointer-events:none;
+    z-index: 0;
 }
 
-/* Main Container */
-.joy-container{
-width:100%;
-max-width:440px;
-background:rgba(255, 255, 255, 0.05);
-backdrop-filter:blur(30px);
--webkit-backdrop-filter:blur(30px);
-border:1px solid rgba(255, 255, 255, 0.15);
-border-radius:36px;
-padding:20px;
-box-shadow:
-0 20px 50px rgba(0,0,0,.5),
-inset 0 1px 2px rgba(255,255,255,.1);
-animation:fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1);
-position: relative;
-z-index: 1;
+/* Ultimate Glass Container - Wider for empty space */
+.joy-container {
+    width: 100%;
+    max-width: 650px; /* Increased width to use side spaces */
+    background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.01));
+    backdrop-filter: blur(35px);
+    -webkit-backdrop-filter: blur(35px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 40px;
+    padding: 25px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.6), inset 0 1px 2px rgba(255,255,255,0.1);
+    position: relative;
+    z-index: 1;
+    animation: fadeUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-/* Image */
-.hero-image{
-width:100%;
-height:280px;
-overflow:hidden;
-border-radius:28px;
-position:relative;
-box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+/* Image Banner */
+.hero-image {
+    width: 100%;
+    height: 320px;
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
 
-.hero-image img{
-width:100%;
-height:100%;
-object-fit:cover;
-display:block;
-transition: transform 0.5s ease;
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    transition: transform 0.6s ease;
 }
 
 .hero-image:hover img {
-transform: scale(1.05);
+    transform: scale(1.08);
 }
 
-/* Overlay */
-.hero-image::after{
-content:"";
-position:absolute;
-inset:0;
-background: linear-gradient(to top, rgba(5,8,22,0.8), transparent 50%);
+.hero-image::after {
+    content:"";
+    position:absolute;
+    inset:0;
+    background: linear-gradient(to top, rgba(5,8,22,0.9), transparent 60%);
 }
 
-/* Artist Info */
-.artist-info{
-text-align:center;
-padding:24px 8px 5px;
-color:white;
+/* Name & Title Section */
+.artist-info {
+    text-align: center;
+    padding: 25px 10px 10px;
 }
 
-/* Name & Blue Tick Wrapper */
-.name-wrapper {
-display: flex;
-align-items: center;
-justify-content: center;
-gap: 8px;
+.name-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Perfect spacing */
 }
 
-.artist-info h1{
-font-size:32px;
-font-weight:800;
-letter-spacing:0.5px;
-margin: 0;
+.name-row h1 {
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin: 0;
+    background: linear-gradient(to right, #ffffff, #dcdcdc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-/* Realistic Blue Tick */
+/* Realistic Blue Tick Perfectly Aligned */
 .blue-tick {
-width: 24px;
-height: 24px;
-margin-top: 3px;
-filter: drop-shadow(0 2px 4px rgba(0, 149, 246, 0.4));
+    width: 26px;
+    height: 26px;
+    margin-top: 4px; /* Perfectly aligned with text */
+    filter: drop-shadow(0 2px 6px rgba(0, 149, 246, 0.5));
 }
 
-.artist-info p{
-margin-top:8px;
-font-size:14px;
-color: rgba(255,255,255,0.7);
-font-weight: 400;
+.artist-info p {
+    margin-top: 8px;
+    font-size: 15px;
+    color: rgba(255,255,255,0.75);
 }
 
 /* Tags */
-.tags{
-display:flex;
-justify-content:center;
-gap:10px;
-flex-wrap:wrap;
-margin-top:20px;
+.tags {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 20px;
 }
 
-.tag{
-padding:8px 18px;
-border-radius:100px;
-background:rgba(255,255,255,.05);
-border:1px solid rgba(255,255,255,.1);
-font-size:12px;
-font-weight: 500;
-color:white;
-backdrop-filter:blur(12px);
-box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-transition: 0.3s ease;
+.tag {
+    padding: 8px 20px;
+    border-radius: 100px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    font-size: 13px;
+    font-weight: 500;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
 }
 
 .tag:hover {
-background: rgba(255,255,255,0.1);
-transform: translateY(-2px);
+    background: rgba(255,255,255,0.15);
+    transform: translateY(-3px);
 }
 
-/* About */
-.about{
-margin-top:24px;
-padding:20px;
-border-radius:24px;
-background:rgba(255,255,255,.04);
-border:1px solid rgba(255,255,255,.08);
-line-height:1.8;
-font-size:14px;
-text-align: center;
-color:rgba(255,255,255,.85);
-box-shadow: inset 0 2px 10px rgba(0,0,0,0.1);
+/* About Box */
+.about {
+    margin-top: 25px;
+    padding: 22px;
+    border-radius: 24px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    font-size: 15px;
+    line-height: 1.8;
+    text-align: center;
+    color: rgba(255,255,255,0.85);
 }
 
-/* Section */
-.section-title{
-margin-top:32px;
-margin-bottom:18px;
-font-size:18px;
-font-weight:700;
-color:white;
-text-transform: uppercase;
-letter-spacing: 1px;
-opacity: 0.9;
-padding-left: 4px;
+/* Section Titles */
+.section-title {
+    margin: 35px 0 20px 5px;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.9);
 }
 
-/* Horizontal Scroll */
-.scroll-row{
-display:flex;
-gap:16px;
-overflow-x:auto;
-padding-bottom:12px;
-scroll-snap-type:x mandatory;
-}
-
-.scroll-row::-webkit-scrollbar{
-display:none;
+/* Grids for Columns/Rows */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
 }
 
 /* Glass Cards */
-.glass-card{
-min-width:160px;
-padding:24px 20px;
-border-radius:28px;
-scroll-snap-align:center;
-background:rgba(255,255,255,.05);
-border:1px solid rgba(255,255,255,.12);
-backdrop-filter:blur(18px);
-transition:all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-text-decoration:none;
-color:white;
-box-shadow:
-0 8px 20px rgba(0,0,0,.2),
-inset 0 1px 1px rgba(255,255,255,.1);
-position: relative;
-overflow: hidden;
+.glass-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 20px;
+    border-radius: 24px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(20px);
+    text-decoration: none;
+    color: white;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
 }
 
-.glass-card::before {
-content: "";
-position: absolute;
-top: 0; left: -100%;
-width: 50%; height: 100%;
-background: linear-gradient(to right, transparent, rgba(255,255,255,0.05), transparent);
-transform: skewX(-20deg);
-transition: 0.5s;
+.glass-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(255,255,255,0.2);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
 }
 
-.glass-card:hover::before {
-left: 150%;
-}
-
-.glass-card:hover{
-transform:translateY(-10px) scale(1.02);
-background:rgba(255,255,255,.1);
-border-color: rgba(255,255,255,0.25);
-box-shadow: 0 15px 30px rgba(0,0,0,.3);
-}
-
-/* Official Icons */
-.glass-card i{
-font-size:36px;
-margin-bottom:18px;
-display:block;
-transition: transform 0.3s ease;
+.glass-card i {
+    font-size: 40px;
+    margin-bottom: 15px;
+    transition: transform 0.3s;
 }
 
 .glass-card:hover i {
-transform: scale(1.1);
+    transform: scale(1.15);
 }
 
-/* Brand Colors */
-.instagram i{ color:#ff4fa0; }
-.youtube i{ color:#ff3131; }
-.facebook i{ color:#3b82ff; }
-.spotify i{ color:#1ed760; }
-.apple i{ color:#ffffff; }
-.amazon i{ color:#ff9900; }
-.soundcloud i{ color:#ff6b00; }
-
-/* Card Title */
-.glass-card h3{
-font-size:17px;
-font-weight: 600;
-margin-bottom:6px;
+.glass-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
 }
 
-/* Subtitle */
-.glass-card p{
-font-size:12px;
-color: rgba(255,255,255,0.6);
-font-weight: 400;
+.glass-card p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 15px;
 }
+
+/* Play Button Inside Card */
+.play-btn {
+    padding: 8px 25px;
+    border-radius: 100px;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.glass-card:hover .play-btn {
+    background: white;
+    color: black;
+}
+
+/* Colors */
+.instagram i { color: #ff4fa0; }
+.youtube i { color: #ff3131; }
+.spotify i { color: #1ed760; }
+.apple i { color: #ffffff; }
 
 /* Close Button */
-.close-wrap{
-display:flex;
-justify-content:center;
-margin-top:36px;
-margin-bottom: 10px;
+.close-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 10px;
 }
 
-.close-btn{
-padding:12px 32px;
-border:none;
-outline:none;
-border-radius:100px;
-background:rgba(255,255,255,.08);
-border:1px solid rgba(255,255,255,.15);
-color:white;
-cursor:pointer;
-font-size:14px;
-font-weight: 500;
-letter-spacing: 0.5px;
-backdrop-filter:blur(10px);
-transition:all 0.3s ease;
-box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+.close-btn {
+    padding: 14px 40px;
+    border: none;
+    border-radius: 100px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s;
 }
 
-.close-btn:hover{
-transform:translateY(-3px);
-background:rgba(255,255,255,.15);
-box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+.close-btn:hover {
+    background: rgba(255,255,255,0.15);
+    transform: scale(1.05);
 }
 
-/* Animation */
-@keyframes fadeUp{
-from{ opacity:0; transform:translateY(40px) scale(0.95); }
-to{ opacity:1; transform:translateY(0) scale(1); }
+/* Animations */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(50px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-/* Mobile */
-@media(max-width:480px){
-.hero-image{ height:250px; }
-.artist-info h1{ font-size:28px; }
-.blue-tick{ width: 22px; height: 22px; }
-.glass-card{ min-width:145px; padding:20px 16px; }
+/* Mobile Adjustments */
+@media(max-width: 600px) {
+    .joy-container { padding: 15px; border-radius: 30px; }
+    .hero-image { height: 260px; }
+    .name-row h1 { font-size: 28px; }
+    .blue-tick { width: 22px; height: 22px; }
+    .grid-container { grid-template-columns: repeat(2, 1fr); }
+    .glass-card { padding: 20px 10px; }
 }
-
 </style>
-
 </head>
 
 <body>
 
 <div class="joy-container">
 
-<!-- IMAGE -->
-<div class="hero-image">
-<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgrn_UOaM66pjG71MKxAW_r2QUO-ie_1fMbv8fn3Pv95bYBJBl-gialHXzXxTQivjeJmLPs1RAM2HMwo-CpOEYmuCbLIHImRKZLy1bSdv68_rrkWra9r86oyPQybstX7HsmnonEsmTzDrP3VRnzrT6ggftJZZN2XHeaRfRNg0jpGOQduHavOeeKYqbmIlqN/s16000/18227.png" alt="FEELING JOY Artist Profile">
-</div>
+    <div class="hero-image">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgrn_UOaM66pjG71MKxAW_r2QUO-ie_1fMbv8fn3Pv95bYBJBl-gialHXzXxTQivjeJmLPs1RAM2HMwo-CpOEYmuCbLIHImRKZLy1bSdv68_rrkWra9r86oyPQybstX7HsmnonEsmTzDrP3VRnzrT6ggftJZZN2XHeaRfRNg0jpGOQduHavOeeKYqbmIlqN/s16000/18227.png" alt="FEELING JOY">
+    </div>
 
-<!-- INFO -->
-<div class="artist-info">
+    <div class="artist-info">
+        <div class="name-row">
+            <h1>FEELING JOY</h1>
+            <svg aria-label="Verified" class="blue-tick" fill="#0095F6" viewBox="0 0 40 40"><title>Verified</title><path d="M19.998 3.094 14.638 0l-2.972 5.15H5.432v6.354L0 14.64 3.094 20 0 25.359l5.432 3.137v5.905h5.975L14.638 40l5.36-3.094L25.358 40l3.232-5.6h6.162v-6.01L40 25.359 36.905 20 40 14.641l-5.248-3.03v-6.46h-6.419L25.358 0l-5.36 3.094Zm7.415 11.225 2.254 2.287-11.43 11.5-6.835-6.93 2.244-2.258 4.587 4.581 9.18-9.18Z" fill-rule="evenodd"></path></svg>
+        </div>
+        <p>Birth 1999 • Writer • Composer</p>
 
-<div class="name-wrapper">
-<h1>FEELING JOY</h1>
-<!-- OFFICIAL VERIFIED BADGE SVG -->
-<svg aria-label="Verified" class="blue-tick" fill="#0095F6" viewBox="0 0 40 40"><title>Verified</title><path d="M19.998 3.094 14.638 0l-2.972 5.15H5.432v6.354L0 14.64 3.094 20 0 25.359l5.432 3.137v5.905h5.975L14.638 40l5.36-3.094L25.358 40l3.232-5.6h6.162v-6.01L40 25.359 36.905 20 40 14.641l-5.248-3.03v-6.46h-6.419L25.358 0l-5.36 3.094Zm7.415 11.225 2.254 2.287-11.43 11.5-6.835-6.93 2.244-2.258 4.587 4.581 9.18-9.18Z" fill-rule="evenodd"></path></svg>
-</div>
+        <div class="tags">
+            <div class="tag">Artist</div>
+            <div class="tag">Composer</div>
+            <div class="tag">Creative Soul</div>
+        </div>
+    </div>
 
-<p>Birth 1999 • Writer • Composer</p>
+    <div class="about">
+        FEELING JOY is an independent artist, writer and composer creating emotional and cinematic musical experiences through visuals, melodies and storytelling.
+    </div>
 
-<div class="tags">
-<div class="tag">Artist</div>
-<div class="tag">Composer</div>
-<div class="tag">Creative Soul</div>
-</div>
+    <div class="section-title">Connect With Me</div>
+    <div class="grid-container">
+        <a class="glass-card instagram" href="https://www.instagram.com/feeling.joy" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+            <h3>Instagram</h3>
+            <p>@feeling.joy</p>
+            <div class="play-btn">FOLLOW</div>
+        </a>
 
-</div>
+        <a class="glass-card youtube" href="https://youtube.com/@feeling-joy" target="_blank">
+            <i class="fa-brands fa-youtube"></i>
+            <h3>YouTube</h3>
+            <p>Official Channel</p>
+            <div class="play-btn">SUBSCRIBE</div>
+        </a>
+    </div>
 
-<!-- ABOUT -->
-<div class="about">
-FEELING JOY is an independent artist, writer and composer creating emotional and cinematic musical experiences through visuals, melodies and storytelling.
-</div>
+    <div class="section-title">Streaming Platforms</div>
+    <div class="grid-container">
+        <a class="glass-card spotify" href="#" target="_blank">
+            <i class="fa-brands fa-spotify"></i>
+            <h3>Spotify</h3>
+            <p>Listen Now</p>
+            <div class="play-btn"><i class="fa-solid fa-play"></i> PLAY</div>
+        </a>
 
-<!-- SOCIAL -->
-<div class="section-title">Connect With Me</div>
+        <a class="glass-card apple" href="#" target="_blank">
+            <i class="fa-brands fa-apple"></i>
+            <h3>Apple Music</h3>
+            <p>Listen Now</p>
+            <div class="play-btn"><i class="fa-solid fa-play"></i> PLAY</div>
+        </a>
+    </div>
 
-<div class="scroll-row">
-<a class="glass-card instagram" href="https://www.instagram.com/feeling.joy?igsh=MTljZmJhc2dzejFjOQ==" target="_blank">
-<i class="fa-brands fa-instagram"></i>
-<h3>Instagram</h3>
-<p>@feeling.joy</p>
-</a>
-
-<a class="glass-card youtube" href="https://youtube.com/@feeling-joy?si=iWiQ8i-LxMiFDa3K" target="_blank">
-<i class="fa-brands fa-youtube"></i>
-<h3>YouTube</h3>
-<p>Official Channel</p>
-</a>
-
-<a class="glass-card facebook" href="https://www.facebook.com/share/1CVaLDjKSy/" target="_blank">
-<i class="fa-brands fa-facebook"></i>
-<h3>Facebook</h3>
-<p>Official Profile</p>
-</a>
-</div>
-
-<!-- STREAMING -->
-<div class="section-title">Streaming Platforms</div>
-
-<div class="scroll-row">
-<div class="glass-card spotify">
-<i class="fa-brands fa-spotify"></i>
-<h3>Spotify</h3>
-<p>Coming Soon</p>
-</div>
-
-<div class="glass-card apple">
-<i class="fa-brands fa-apple"></i>
-<h3>Apple Music</h3>
-<p>Coming Soon</p>
-</div>
-
-<div class="glass-card amazon">
-<i class="fa-brands fa-amazon"></i>
-<h3>Amazon Music</h3>
-<p>Coming Soon</p>
-</div>
-
-<div class="glass-card soundcloud">
-<i class="fa-brands fa-soundcloud"></i>
-<h3>SoundCloud</h3>
-<p>Coming Soon</p>
-</div>
-</div>
-
-<!-- CLOSE -->
-<div class="close-wrap">
-<button class="close-btn" onclick="history.back()">Close</button>
-</div>
+    <div class="close-wrap">
+        <button class="close-btn" onclick="history.back()">Close</button>
+    </div>
 
 </div>
+
+<script>
+    // Browser security doesn't allow fullscreen without user interaction.
+    // This script will make the page full screen the FIRST TIME the user touches or clicks anywhere on the screen.
+    document.addEventListener('click', function activateFullscreen() {
+        if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen().catch((err) => {
+                console.log(`Error attempting to enable fullscreen: ${err.message}`);
+            });
+        }
+        // Remove listener after first click so it doesn't keep triggering
+        document.removeEventListener('click', activateFullscreen);
+    });
+</script>
 
 </body>
 </html>

@@ -1,320 +1,433 @@
+<!-- =========================
+ FEELING JOY — PREMIUM SMART LINK
+ Replace your old index.html with this
+========================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FEELING JOY</title>
+
+<!-- Favicon -->
+<link rel="icon" href="https://cdn-icons-png.flaticon.com/512/727/727245.png">
+
+<!-- Google Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
 <style>
-/* ===== FORCE FULLSCREEN BLOGGER FIX ===== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
 
 html,body{
-margin:0 !important;
-padding:0 !important;
-width:100% !important;
-height:100% !important;
-overflow-x:hidden !important;
-background:#050816 !important;
+width:100%;
+min-height:100%;
+overflow-x:hidden;
 font-family:'Poppins',sans-serif;
+background:#070b1a;
 }
 
-/* Blogger theme remove */
-header,
-.Header,
-.header,
-#header,
-.navbar,
-.sidebar,
-.widget,
-footer,
-.Footer,
-.mobile-menu,
-.blog-pager,
-.status-msg-wrap{
-display:none !important;
-}
-
-/* Fullscreen Container */
-#joy-fullscreen{
-position:fixed;
-top:0;
-left:0;
-width:100vw;
-height:100vh;
-z-index:999999;
-overflow-y:auto;
+/* Background */
+body{
 
 background:
-radial-gradient(circle at top left,#4d1d7d 0%,transparent 30%),
-radial-gradient(circle at bottom right,#005dff 0%,transparent 30%),
-linear-gradient(135deg,#050816,#0d1023,#151933);
+radial-gradient(circle at top left,#5b1d93 0%,transparent 28%),
+radial-gradient(circle at bottom right,#0057ff 0%,transparent 28%),
+linear-gradient(145deg,#050816,#0a1024,#12182f);
 
-padding:18px;
+display:flex;
+justify-content:center;
+padding:25px 16px;
+
 }
 
-/* Texture */
-#joy-fullscreen::before{
+/* Grid Texture */
+body::before{
+
 content:"";
 position:fixed;
 inset:0;
+
 background-image:
-linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-background-size:40px 40px;
+linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+
+background-size:42px 42px;
+
 pointer-events:none;
+
 }
 
-/* Main Glass Card */
-.joy-card{
-max-width:470px;
-margin:auto;
+/* Main Container */
+.joy-container{
+
+width:100%;
+max-width:430px;
 
 background:rgba(255,255,255,0.08);
-backdrop-filter:blur(20px);
--webkit-backdrop-filter:blur(20px);
 
-border:1px solid rgba(255,255,255,0.12);
+backdrop-filter:blur(24px);
+-webkit-backdrop-filter:blur(24px);
 
-border-radius:35px;
+border:1px solid rgba(255,255,255,.1);
 
-padding:20px;
+border-radius:34px;
+
+padding:18px;
 
 box-shadow:
-0 10px 40px rgba(0,0,0,0.45),
-inset 0 1px 1px rgba(255,255,255,0.08);
+0 10px 40px rgba(0,0,0,.45),
+inset 0 1px 1px rgba(255,255,255,.08);
 
 animation:fadeUp 1s ease;
+
 }
 
-/* IMAGE */
-.joy-image{
+/* Image */
+.hero-image{
+
 width:100%;
-border-radius:28px;
+height:270px;
+
 overflow:hidden;
-margin-bottom:20px;
+
+border-radius:26px;
+
 position:relative;
+
 }
 
-.joy-image img{
+.hero-image img{
+
 width:100%;
-display:block;
+height:100%;
 object-fit:cover;
+
+display:block;
+
+}
+
+/* Overlay */
+.hero-image::after{
+
+content:"";
+
+position:absolute;
+inset:0;
+
+background:
+linear-gradient(to top,rgba(0,0,0,.45),transparent 45%);
+
 }
 
 /* Artist Info */
-.joy-info{
+.artist-info{
+
 text-align:center;
+padding:22px 8px 5px;
+
 color:white;
+
 }
 
-.joy-info h1{
-font-size:32px;
+.artist-info h1{
+
+font-size:33px;
 font-weight:700;
-margin-bottom:8px;
 letter-spacing:1px;
+
 }
 
-.joy-info p{
+.artist-info p{
+
+margin-top:6px;
+
 font-size:14px;
-opacity:0.85;
-line-height:1.8;
+opacity:.75;
+
 }
 
 /* Tags */
-.joy-tags{
+.tags{
+
 display:flex;
 justify-content:center;
-flex-wrap:wrap;
 gap:10px;
-margin-top:15px;
+flex-wrap:wrap;
+
+margin-top:18px;
+
 }
 
-.joy-tag{
+.tag{
+
 padding:10px 16px;
+
 border-radius:100px;
-background:rgba(255,255,255,0.08);
-border:1px solid rgba(255,255,255,0.12);
-font-size:13px;
+
+background:rgba(255,255,255,.07);
+
+border:1px solid rgba(255,255,255,.08);
+
+font-size:12px;
+
 color:white;
-backdrop-filter:blur(10px);
+
+backdrop-filter:blur(12px);
+
 }
 
 /* About */
-.joy-about{
-margin-top:25px;
+.about{
+
+margin-top:22px;
+
 padding:18px;
+
 border-radius:24px;
 
-background:rgba(255,255,255,0.06);
-border:1px solid rgba(255,255,255,0.1);
+background:rgba(255,255,255,.06);
 
-color:rgba(255,255,255,0.88);
+border:1px solid rgba(255,255,255,.08);
 
-line-height:1.8;
+line-height:1.9;
+
 font-size:14px;
+
+color:rgba(255,255,255,.86);
+
 }
 
-/* Section Title */
-.joy-title{
+/* Section */
+.section-title{
+
 margin-top:28px;
-margin-bottom:15px;
+margin-bottom:16px;
+
 font-size:20px;
 font-weight:600;
+
 color:white;
+
 }
 
 /* Horizontal Scroll */
-.joy-scroll{
+.scroll-row{
+
 display:flex;
-gap:15px;
+gap:16px;
+
 overflow-x:auto;
-padding-bottom:10px;
+
+padding-bottom:8px;
+
 scroll-snap-type:x mandatory;
+
 }
 
-.joy-scroll::-webkit-scrollbar{
+.scroll-row::-webkit-scrollbar{
 display:none;
 }
 
-/* Social Cards */
-.joy-social{
-min-width:160px;
-padding:20px;
-border-radius:28px;
+/* Glass Cards */
+.glass-card{
 
-background:rgba(255,255,255,0.08);
+min-width:165px;
 
-backdrop-filter:blur(18px);
--webkit-backdrop-filter:blur(18px);
+padding:22px 20px;
 
-border:1px solid rgba(255,255,255,0.15);
-
-text-decoration:none;
-color:white;
+border-radius:30px;
 
 scroll-snap-align:center;
 
-transition:.4s;
-}
+background:rgba(255,255,255,.08);
 
-.joy-social:hover{
-transform:translateY(-8px) scale(1.03);
-}
-
-.joy-social span{
-font-size:38px;
-display:block;
-margin-bottom:12px;
-}
-
-.joy-social h3{
-font-size:18px;
-margin-bottom:5px;
-}
-
-/* Streaming Cards */
-.joy-stream{
-min-width:145px;
-padding:22px;
-border-radius:28px;
-
-background:rgba(255,255,255,0.08);
+border:1px solid rgba(255,255,255,.12);
 
 backdrop-filter:blur(18px);
-
-border:1px solid rgba(255,255,255,0.14);
-
-text-align:center;
-
-scroll-snap-align:center;
 
 transition:.45s;
+
+text-decoration:none;
+
 color:white;
+
+box-shadow:
+0 6px 18px rgba(0,0,0,.18),
+inset 0 1px 1px rgba(255,255,255,.06);
+
 }
 
-.joy-stream:hover{
-transform:rotate(-3deg) scale(1.05);
+.glass-card:hover{
+
+transform:translateY(-8px) scale(1.03);
+
+background:rgba(255,255,255,.11);
+
 }
 
-.joy-stream span{
-font-size:42px;
+/* Official Icons */
+.glass-card i{
+
+font-size:38px;
+
+margin-bottom:16px;
+
 display:block;
-margin-bottom:10px;
+
+}
+
+/* Brand Colors */
+.instagram i{
+color:#ff4fa0;
+}
+
+.youtube i{
+color:#ff3131;
+}
+
+.facebook i{
+color:#3b82ff;
+}
+
+.spotify i{
+color:#1ed760;
+}
+
+.apple i{
+color:#ffffff;
+}
+
+.amazon i{
+color:#ff9900;
+}
+
+.soundcloud i{
+color:#ff6b00;
+}
+
+/* Card Title */
+.glass-card h3{
+
+font-size:18px;
+margin-bottom:6px;
+
+}
+
+/* Subtitle */
+.glass-card p{
+
+font-size:12px;
+opacity:.7;
+
 }
 
 /* Close Button */
-.joy-close{
+.close-wrap{
+
 display:flex;
 justify-content:center;
-margin-top:30px;
+
+margin-top:32px;
+
 }
 
-.joy-close button{
-border:none;
-outline:none;
+.close-btn{
 
 padding:11px 24px;
 
+border:none;
+outline:none;
+
 border-radius:100px;
 
-background:rgba(255,255,255,0.1);
+background:rgba(255,255,255,.08);
+
+border:1px solid rgba(255,255,255,.1);
 
 color:white;
+
+cursor:pointer;
 
 font-size:13px;
 
 backdrop-filter:blur(10px);
 
-border:1px solid rgba(255,255,255,0.12);
+transition:.35s;
 
-cursor:pointer;
-
-transition:.3s;
 }
 
-.joy-close button:hover{
-transform:scale(1.06);
-background:rgba(255,255,255,0.18);
+.close-btn:hover{
+
+transform:scale(1.05);
+
+background:rgba(255,255,255,.14);
+
 }
 
 /* Animation */
 @keyframes fadeUp{
+
 from{
 opacity:0;
 transform:translateY(50px);
 }
+
 to{
 opacity:1;
 transform:translateY(0);
 }
+
 }
 
 /* Mobile */
 @media(max-width:480px){
 
-.joy-card{
-padding:16px;
-border-radius:28px;
+.hero-image{
+height:235px;
 }
 
-.joy-info h1{
-font-size:27px;
+.artist-info h1{
+font-size:28px;
 }
 
-.joy-social{
-min-width:145px;
+.glass-card{
+min-width:150px;
+padding:20px 18px;
 }
 
 }
 
 </style>
 
-<!-- ===== FULLSCREEN PAGE ===== -->
+</head>
 
-<div id="joy-fullscreen">
+<body>
 
-<div class="joy-card">
+<div class="joy-container">
 
 <!-- IMAGE -->
-<div class="joy-image">
-<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgrn_UOaM66pjG71MKxAW_r2QUO-ie_1fMbv8fn3Pv95bYBJBl-gialHXzXxTQivjeJmLPs1RAM2HMwo-CpOEYmuCbLIHImRKZLy1bSdv68_rrkWra9r86oyPQybstX7HsmnonEsmTzDrP3VRnzrT6ggftJZZN2XHeaRfRNg0jpGOQduHavOeeKYqbmIlqN/s16000/18227.png"/>
+<div class="hero-image">
+
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgrn_UOaM66pjG71MKxAW_r2QUO-ie_1fMbv8fn3Pv95bYBJBl-gialHXzXxTQivjeJmLPs1RAM2HMwo-CpOEYmuCbLIHImRKZLy1bSdv68_rrkWra9r86oyPQybstX7HsmnonEsmTzDrP3VRnzrT6ggftJZZN2XHeaRfRNg0jpGOQduHavOeeKYqbmIlqN/s16000/18227.png">
+
 </div>
 
 <!-- INFO -->
-<div class="joy-info">
+<div class="artist-info">
 
 <h1>FEELING JOY</h1>
 
@@ -322,84 +435,132 @@ min-width:145px;
 Birth 1999 • Writer • Composer
 </p>
 
-<div class="joy-tags">
-<div class="joy-tag">🎵 Artist</div>
-<div class="joy-tag">✨ Composer</div>
-<div class="joy-tag">🌙 Creative Soul</div>
+<div class="tags">
+
+<div class="tag">Artist</div>
+
+<div class="tag">Composer</div>
+
+<div class="tag">Creative Soul</div>
+
 </div>
 
 </div>
 
 <!-- ABOUT -->
-<div class="joy-about">
-FEELING JOY is an independent artist, writer and composer creating emotional and cinematic musical experiences. Through visuals, melodies and storytelling, he delivers modern atmospheric vibes and creative energy.
+<div class="about">
+
+FEELING JOY is an independent artist, writer and composer creating emotional and cinematic musical experiences through visuals, melodies and storytelling.
+
 </div>
 
 <!-- SOCIAL -->
-<div class="joy-title">
+<div class="section-title">
 Connect With Me
 </div>
 
-<div class="joy-scroll">
+<div class="scroll-row">
 
-<a class="joy-social" href="https://www.instagram.com/feeling.joy?igsh=MTljZmJhc2dzejFjOQ==" target="_blank">
-<span>📸</span>
+<a class="glass-card instagram"
+href="https://www.instagram.com/feeling.joy?igsh=MTljZmJhc2dzejFjOQ=="
+target="_blank">
+
+<i class="fa-brands fa-instagram"></i>
+
 <h3>Instagram</h3>
+
 <p>@feeling.joy</p>
+
 </a>
 
-<a class="joy-social" href="https://youtube.com/@feeling-joy?si=iWiQ8i-LxMiFDa3K" target="_blank">
-<span>▶️</span>
+<a class="glass-card youtube"
+href="https://youtube.com/@feeling-joy?si=iWiQ8i-LxMiFDa3K"
+target="_blank">
+
+<i class="fa-brands fa-youtube"></i>
+
 <h3>YouTube</h3>
+
 <p>Official Channel</p>
+
 </a>
 
-<a class="joy-social" href="https://www.facebook.com/share/1CVaLDjKSy/" target="_blank">
-<span>💙</span>
+<a class="glass-card facebook"
+href="https://www.facebook.com/share/1CVaLDjKSy/"
+target="_blank">
+
+<i class="fa-brands fa-facebook"></i>
+
 <h3>Facebook</h3>
+
 <p>Official Profile</p>
+
 </a>
 
 </div>
 
 <!-- STREAMING -->
-<div class="joy-title">
+<div class="section-title">
 Streaming Platforms
 </div>
 
-<div class="joy-scroll">
+<div class="scroll-row">
 
-<div class="joy-stream">
-<span>🎧</span>
-<h4>Spotify</h4>
+<div class="glass-card spotify">
+
+<i class="fa-brands fa-spotify"></i>
+
+<h3>Spotify</h3>
+
+<p>Coming Soon</p>
+
 </div>
 
-<div class="joy-stream">
-<span>🍎</span>
-<h4>Apple Music</h4>
+<div class="glass-card apple">
+
+<i class="fa-brands fa-apple"></i>
+
+<h3>Apple Music</h3>
+
+<p>Coming Soon</p>
+
 </div>
 
-<div class="joy-stream">
-<span>🎶</span>
-<h4>JioSaavn</h4>
+<div class="glass-card amazon">
+
+<i class="fa-brands fa-amazon"></i>
+
+<h3>Amazon Music</h3>
+
+<p>Coming Soon</p>
+
 </div>
 
-<div class="joy-stream">
-<span>🔥</span>
-<h4>SoundCloud</h4>
-</div>
+<div class="glass-card soundcloud">
 
-<div class="joy-stream">
-<span>💿</span>
-<h4>Amazon Music</h4>
+<i class="fa-brands fa-soundcloud"></i>
+
+<h3>SoundCloud</h3>
+
+<p>Coming Soon</p>
+
 </div>
 
 </div>
 
 <!-- CLOSE -->
-<div class="joy-close">
-<button onclick="history.back()">Close</button>
+<div class="close-wrap">
+
+<button class="close-btn"
+onclick="history.back()">
+
+Close
+
+</button>
+
 </div>
 
 </div>
-</div>
+
+</body>
+</html>

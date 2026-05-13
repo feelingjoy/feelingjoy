@@ -1,137 +1,190 @@
-export default function FeelingJoyLandingPage() { const links = [ { name: 'YouTube', url: 'https://youtube.com/@feeling-joy/', logo: 'https://cdn.simpleicons.org/youtube/ffffff', }, { name: 'YouTube Music', url: 'https://music.youtube.com/channel/UCZHv80xS1WdJA7_iewvOy-w?si=B5FmUvH-0-e2zwqJ', logo: 'https://cdn.simpleicons.org/youtubemusic/ffffff', }, { name: 'Spotify', url: 'https://open.spotify.com/artist/6WHHDHGQu5IxDG32UZ8ug9?si=c2D6otuRX6mOgYPicZSAA', logo: 'https://cdn.simpleicons.org/spotify/ffffff', }, { name: 'JioSaavn', url: 'https://www.saavn.com/s/artist/feeling-joy-albums/e4wBIn0DC9k', logo: 'https://upload.wikimedia.org/wikipedia/commons/0/0a/JioSaavn_Logo.svg', }, { name: 'Apple Music', url: 'https://music.apple.com/au/artist/feeling-joy/1727533283', logo: 'https://cdn.simpleicons.org/applemusic/ffffff', }, { name: 'Instagram', url: 'https://www.instagram.com/feeling.joy/', logo: 'https://cdn.simpleicons.org/instagram/ffffff', }, { name: 'Facebook', url: 'https://www.facebook.com/FEELING.JOYY/', logo: 'https://cdn.simpleicons.org/facebook/ffffff', }, ];
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FEELING JOY | Official Artist Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-bg: #0a0a0a;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --accent-color: #1DB954; /* Spotify Green for energy */
+            --text-color: #ffffff;
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
 
-return ( <div className="min-h-screen bg-[#050816] text-white overflow-hidden relative"> {/* Background Effects */} <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-cyan-500/20 blur-3xl rounded-full" /> <div className="absolute bottom-0 right-0 w-[350px] h-[350px] bg-blue-600/20 blur-3xl rounded-full" />
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
 
-<div className="relative z-10 max-w-6xl mx-auto px-6 py-10">
-    {/* Hero Section */}
-    <div className="grid lg:grid-cols-2 gap-10 items-center">
-      {/* Left Content */}
-      <div>
-        <div className="inline-flex items-center gap-3 bg-white/5 border border-white/10 backdrop-blur-md px-5 py-3 rounded-full mb-6">
-          <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
-          <span className="text-sm tracking-[0.2em] uppercase text-gray-300">
-            Official Artist Profile
-          </span>
-        </div>
+        body {
+            background-color: var(--primary-bg);
+            background: radial-gradient(circle at top right, #1a1a1a, #0a0a0a);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
 
-        <h1 className="text-5xl md:text-7xl font-black leading-tight tracking-tight">
-          FEELING
-          <br />
-          <span className="text-cyan-400 flex items-center gap-3">
-            JOY
-            <span className="bg-cyan-400/10 border border-cyan-400/30 text-cyan-300 text-sm px-4 py-2 rounded-full font-semibold tracking-wide backdrop-blur-md">
-              VERIFIED
-            </span>
-          </span>
-        </h1>
+        .container {
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
 
-        <p className="mt-6 text-lg text-gray-300 leading-relaxed max-w-xl">
-          Writer • Composer • Independent Music Artist creating emotional,
-          atmospheric and cinematic vibes through music.
-        </p>
+        /* Profile Section */
+        .profile-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            padding: 40px 30px;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
 
-        <div className="flex flex-wrap gap-4 mt-8">
-          <div className="bg-white/5 border border-white/10 rounded-2xl px-5 py-4 backdrop-blur-md">
-            <p className="text-gray-400 text-sm">Born</p>
-            <h3 className="text-xl font-bold">1999</h3>
-          </div>
+        .profile-img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent-color);
+            padding: 5px;
+            margin-bottom: 20px;
+        }
 
-          <div className="bg-white/5 border border-white/10 rounded-2xl px-5 py-4 backdrop-blur-md">
-            <p className="text-gray-400 text-sm">Profession</p>
-            <h3 className="text-xl font-bold">Writer & Composer</h3>
-          </div>
-        </div>
+        .name-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 5px;
+        }
 
-        <div className="mt-10 flex flex-wrap gap-4">
-          <a
-            href="https://open.spotify.com/artist/6WHHDHGQu5IxDG32UZ8ug9?si=_c2D6otuRX6mOgYPicZSAA"
-            target="_blank"
-            className="bg-cyan-400 text-black font-semibold px-6 py-3 rounded-2xl hover:scale-105 transition duration-300"
-          >
-            Listen Now
-          </a>
+        .name-container h1 {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
 
-          <a
-            href="https://youtube.com/@feeling-joy/"
-            target="_blank"
-            className="border border-white/20 bg-white/5 backdrop-blur-md px-6 py-3 rounded-2xl hover:bg-white/10 transition duration-300"
-          >
-            Watch Videos
-          </a>
-        </div>
-      </div>
+        .verify-badge {
+            color: #3897f0;
+            font-size: 18px;
+        }
 
-      {/* Right Image */}
-      <div className="relative flex justify-center lg:justify-end">
-        <div className="absolute inset-0 bg-cyan-400/20 blur-3xl rounded-full"></div>
+        .tagline {
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
 
-        <div className="relative bg-white/5 border border-white/10 backdrop-blur-xl rounded-[40px] p-4 shadow-2xl">
-          <img
-            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgrn_UOaM66pjG71MKxAW_r2QUO-ie_1fMbv8fn3Pv95bYBJBl-gialHXzXxTQivjeJmLPs1RAM2HMwo-CpOEYmuCbLIHImRKZLy1bSdv68_rrkWra9r86oyPQybstX7HsmnonEsmTzDrP3VRnzrT6ggftJZZN2XHeaRfRNg0jpGOQduHavOeeKYqbmIlqN/s16000/18227.png"
-            alt="Feeling Joy"
-            className="w-full max-w-md rounded-[30px] object-cover"
-          />
-        </div>
-      </div>
-    </div>
+        .about {
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #ddd;
+        }
 
-    {/* About Section */}
-    <div className="mt-24 bg-white/5 border border-white/10 rounded-[35px] p-8 backdrop-blur-xl">
-      <h2 className="text-3xl font-bold mb-5">About</h2>
+        /* Links Section */
+        .links-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
 
-      <p className="text-gray-300 leading-8 text-lg max-w-4xl">
-        FEELING JOY is an independent music artist known for emotional melodies,
-        cinematic moods, and expressive compositions. Through heartfelt songwriting
-        and atmospheric sound design, the music connects deeply with listeners across
-        different streaming platforms worldwide.
-      </p>
-    </div>
+        .link-item {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--glass-border);
+            padding: 15px 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
 
-    {/* Streaming Platforms */}
-    <div className="mt-24">
-      <div className="flex items-center justify-between mb-8 flex-wrap gap-4">
-        <div>
-          <h2 className="text-3xl font-bold">Streaming & Social Links</h2>
-          <p className="text-gray-400 mt-2">
-            Listen, follow and connect on every platform.
-          </p>
-        </div>
-      </div>
+        .link-item i {
+            font-size: 20px;
+            width: 30px;
+            margin-right: 15px;
+        }
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {links.map((item, index) => (
-          <a
-            key={index}
-            href={item.url}
-            target="_blank"
-            className="group bg-white/5 border border-white/10 hover:border-cyan-400/40 rounded-3xl p-6 backdrop-blur-xl transition duration-300 hover:-translate-y-1"
-          >
-            <div className="flex items-center justify-between">
-              <div>
-                <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-5">
-                  <img
-                    src={item.logo}
-                    alt={item.name}
-                    className="w-7 h-7 object-contain"
-                  />
-                </div>
-                <h3 className="text-xl font-semibold">{item.name}</h3>
-              </div>
+        .link-item:hover {
+            background: var(--accent-color);
+            transform: translateY(-3px);
+            border-color: transparent;
+        }
 
-              <div className="w-12 h-12 rounded-full bg-cyan-400/10 flex items-center justify-center group-hover:bg-cyan-400 group-hover:text-black transition duration-300 text-sm font-semibold tracking-wide">
-                OPEN
-              </div>
+        /* Platform specific colors on hover (Optional) */
+        .yt:hover { background: #FF0000; }
+        .spot:hover { background: #1DB954; }
+        .apple:hover { background: #FA243C; }
+        .ig:hover { background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); }
+        .fb:hover { background: #1877F2; }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 12px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="profile-card">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgrn_UOaM66pjG71MKxAW_r2QUO-ie_1fMbv8fn3Pv95bYBJBl-gialHXzXxTQivjeJmLPs1RAM2HMwo-CpOEYmuCbLIHImRKZLy1bSdv68_rrkWra9r86oyPQybstX7HsmnonEsmTzDrP3VRnzrT6ggftJZZN2XHeaRfRNg0jpGOQduHavOeeKYqbmIlqN/s16000/18227.png" alt="FEELING JOY" class="profile-img">
+
+            <div class="name-container">
+                <h1>FEELING JOY</h1>
+                <i class="fas fa-check-circle verify-badge" title="Verified Artist"></i>
             </div>
-          </a>
-        ))}
-      </div>
+            <p class="tagline">Writer | Composer</p>
+
+            <p class="about">
+                Born in 1999. Dedicated to creating music that resonates. 
+                Expressing emotions through lyrics and rhythms.
+            </p>
+
+            <div class="links-wrapper">
+                <a href="https://music.youtube.com/channel/UCZHv80xS1WdJA7_iewvOy-w" class="link-item yt" target="_blank">
+                    <i class="fab fa-youtube"></i> YouTube Music
+                </a>
+                <a href="https://open.spotify.com/artist/6WHHDHGQu5IxDG32UZ8ug9?si=_c2D6otuRX6mOgYPicZSAA" class="link-item spot" target="_blank">
+                    <i class="fab fa-spotify"></i> Spotify
+                </a>
+                <a href="https://music.apple.com/au/artist/feeling-joy/1727533283" class="link-item apple" target="_blank">
+                    <i class="fab fa-apple"></i> Apple Music
+                </a>
+                <a href="https://www.saavn.com/s/artist/feeling-joy-albums/e4wBIn0DC9k_" class="link-item" style="background: rgba(43, 182, 115, 0.1);" target="_blank">
+                    <i class="fas fa-music"></i> JioSaavn
+                </a>
+                <a href="https://youtube.com/@feeling-joy/" class="link-item yt" target="_blank">
+                    <i class="fab fa-youtube"></i> YouTube Channel
+                </a>
+                <a href="https://www.instagram.com/feeling.joy/" class="link-item ig" target="_blank">
+                    <i class="fab fa-instagram"></i> Instagram
+                </a>
+                <a href="https://www.facebook.com/FEELING.JOYY/" class="link-item fb" target="_blank">
+                    <i class="fab fa-facebook"></i> Facebook
+                </a>
+            </div>
+        </div>
+
+        <div class="footer">
+            © 2026 FEELING JOY. All Rights Reserved.
+        </div>
     </div>
 
-    {/* Footer */}
-    <footer className="mt-24 border-t border-white/10 pt-8 pb-4 text-center text-gray-500 text-sm">
-      © 2026 FEELING JOY — Official Artist Landing Page
-    </footer>
-  </div>
-</div>
-
-); }
+</body>
+</html>

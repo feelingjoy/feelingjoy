@@ -2,189 +2,183 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FEELING JOY | Official Artist Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>FEELING JOY | Official</title>
+    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-bg: #0a0a0a;
-            --card-bg: rgba(255, 255, 255, 0.05);
-            --accent-color: #1DB954; /* Spotify Green for energy */
-            --text-color: #ffffff;
-            --glass-border: rgba(255, 255, 255, 0.1);
+        /* Reset & Base Settings */
+        * { 
+            margin: 0; padding: 0; box-sizing: border-box; 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+            -webkit-tap-highlight-color: transparent; 
+        }
+        body { 
+            background-color: #000; /* Pure black background */
+            color: #fff; 
+            overflow-x: hidden; 
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
+        /* Loading Intro Animation */
+        #loader {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            background: #000; z-index: 9999;
+            display: flex; justify-content: center; align-items: center;
+            animation: fadeOut 1s ease-in-out 1.5s forwards;
+        }
+        .loader-text {
+            font-size: 24px; font-weight: 800; letter-spacing: 4px;
+            background: linear-gradient(90deg, #333, #fff, #333);
+            background-size: 200% auto;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            animation: shine 1.5s linear infinite;
         }
 
-        body {
-            background-color: var(--primary-bg);
-            background: radial-gradient(circle at top right, #1a1a1a, #0a0a0a);
-            color: var(--text-color);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
+        /* Animations Keyframes */
+        @keyframes fadeOut { to { opacity: 0; visibility: hidden; } }
+        @keyframes shine { to { background-position: 200% center; } }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Hero Image Section (Full Screen Edge-to-Edge) */
+        .hero {
+            position: relative; width: 100vw; height: 65vh; 
+            background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgrn_UOaM66pjG71MKxAW_r2QUO-ie_1fMbv8fn3Pv95bYBJBl-gialHXzXxTQivjeJmLPs1RAM2HMwo-CpOEYmuCbLIHImRKZLy1bSdv68_rrkWra9r86oyPQybstX7HsmnonEsmTzDrP3VRnzrT6ggftJZZN2XHeaRfRNg0jpGOQduHavOeeKYqbmIlqN/s16000/18227.png');
+            background-size: cover; background-position: center top;
+        }
+        
+        /* Black Gradient Overlay to blend image into the body */
+        .hero-overlay {
+            position: absolute; bottom: 0; left: 0; width: 100%; height: 60%;
+            background: linear-gradient(to top, #000 0%, rgba(0,0,0,0.8) 30%, transparent 100%);
+            display: flex; flex-direction: column; justify-content: flex-end; padding: 25px 20px;
+        }
+        
+        .hero-content { animation: slideUp 1s ease-out 1.5s both; }
+        
+        .artist-name { 
+            font-size: 34px; font-weight: 800; display: flex; align-items: center; gap: 8px; margin-bottom: 5px; 
+        }
+        .blue-tick { color: #0095f6; font-size: 22px; } /* Exact iOS Blue */
+        
+        .tagline { color: #a1a1a6; font-size: 15px; font-weight: 500; margin-bottom: 8px; }
+        .about { font-size: 14px; color: #d2d2d7; line-height: 1.5; }
+
+        /* Links Section (Merged perfectly with no outer boundaries) */
+        .content {
+            background: #000;
+            padding: 5px 20px 40px 20px;
+            display: flex; flex-direction: column; gap: 14px;
         }
 
-        .container {
-            max-width: 500px;
-            width: 100%;
-            text-align: center;
-        }
-
-        /* Profile Section */
-        .profile-card {
-            background: var(--card-bg);
-            backdrop-filter: blur(15px);
-            border: 1px solid var(--glass-border);
-            padding: 40px 30px;
-            border-radius: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-
-        .profile-img {
-            width: 130px;
-            height: 130px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--accent-color);
-            padding: 5px;
-            margin-bottom: 20px;
-        }
-
-        .name-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            margin-bottom: 5px;
-        }
-
-        .name-container h1 {
-            font-size: 24px;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-
-        .verify-badge {
-            color: #3897f0;
-            font-size: 18px;
-        }
-
-        .tagline {
-            font-size: 14px;
-            color: #aaa;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .about {
-            font-size: 15px;
-            line-height: 1.6;
-            margin-bottom: 30px;
-            color: #ddd;
-        }
-
-        /* Links Section */
-        .links-wrapper {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
+        /* iOS Ultra-Premium Glassmorphic Buttons */
         .link-item {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid var(--glass-border);
-            padding: 15px 20px;
-            border-radius: 12px;
-            text-decoration: none;
-            color: white;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            transition: all 0.3s ease;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 18px 22px; border-radius: 20px;
+            background: rgba(28, 28, 30, 0.5); /* Apple dark mode surface */
+            backdrop-filter: blur(25px) saturate(200%);
+            -webkit-backdrop-filter: blur(25px) saturate(200%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            text-decoration: none; color: #fff;
+            transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1), background 0.2s;
+            animation: slideUp 0.8s ease-out both;
+        }
+        
+        /* Click Effect */
+        .link-item:active { transform: scale(0.96); background: rgba(255, 255, 255, 0.1); }
+        
+        /* Staggered entrance animation for links */
+        .link-item:nth-child(1) { animation-delay: 1.6s; }
+        .link-item:nth-child(2) { animation-delay: 1.7s; }
+        .link-item:nth-child(3) { animation-delay: 1.8s; }
+        .link-item:nth-child(4) { animation-delay: 1.9s; }
+        .link-item:nth-child(5) { animation-delay: 2.0s; }
+        .link-item:nth-child(6) { animation-delay: 2.1s; }
+        .link-item:nth-child(7) { animation-delay: 2.2s; }
+
+        .link-left { display: flex; align-items: center; gap: 16px; font-size: 17px; font-weight: 600; letter-spacing: 0.3px; }
+        .link-icon { font-size: 24px; width: 28px; text-align: center; }
+        
+        /* The Right Side Play Button */
+        .action-btn {
+            width: 36px; height: 36px; border-radius: 50%;
+            background: rgba(255, 255, 255, 0.15);
+            display: flex; justify-content: center; align-items: center;
+            font-size: 14px; color: #fff;
+            backdrop-filter: blur(10px);
         }
 
-        .link-item i {
-            font-size: 20px;
-            width: 30px;
-            margin-right: 15px;
-        }
+        /* Platform specific icon colors */
+        .yt-color { color: #ff0000; }
+        .spot-color { color: #1DB954; }
+        .apple-color { color: #fa243c; }
+        .jio-color { color: #2bb673; }
+        .ig-color { background: -webkit-linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .fb-color { color: #1877f2; }
 
-        .link-item:hover {
-            background: var(--accent-color);
-            transform: translateY(-3px);
-            border-color: transparent;
-        }
-
-        /* Platform specific colors on hover (Optional) */
-        .yt:hover { background: #FF0000; }
-        .spot:hover { background: #1DB954; }
-        .apple:hover { background: #FA243C; }
-        .ig:hover { background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); }
-        .fb:hover { background: #1877F2; }
-
-        .footer {
-            margin-top: 30px;
-            font-size: 12px;
-            color: #555;
-        }
+        .footer { text-align: center; margin-top: 30px; font-size: 12px; color: #555; font-weight: 500; }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="profile-card">
-            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgrn_UOaM66pjG71MKxAW_r2QUO-ie_1fMbv8fn3Pv95bYBJBl-gialHXzXxTQivjeJmLPs1RAM2HMwo-CpOEYmuCbLIHImRKZLy1bSdv68_rrkWra9r86oyPQybstX7HsmnonEsmTzDrP3VRnzrT6ggftJZZN2XHeaRfRNg0jpGOQduHavOeeKYqbmIlqN/s16000/18227.png" alt="FEELING JOY" class="profile-img">
-
-            <div class="name-container">
-                <h1>FEELING JOY</h1>
-                <i class="fas fa-check-circle verify-badge" title="Verified Artist"></i>
-            </div>
-            <p class="tagline">Writer | Composer</p>
-
-            <p class="about">
-                Born in 1999. Dedicated to creating music that resonates. 
-                Expressing emotions through lyrics and rhythms.
-            </p>
-
-            <div class="links-wrapper">
-                <a href="https://music.youtube.com/channel/UCZHv80xS1WdJA7_iewvOy-w" class="link-item yt" target="_blank">
-                    <i class="fab fa-youtube"></i> YouTube Music
-                </a>
-                <a href="https://open.spotify.com/artist/6WHHDHGQu5IxDG32UZ8ug9?si=_c2D6otuRX6mOgYPicZSAA" class="link-item spot" target="_blank">
-                    <i class="fab fa-spotify"></i> Spotify
-                </a>
-                <a href="https://music.apple.com/au/artist/feeling-joy/1727533283" class="link-item apple" target="_blank">
-                    <i class="fab fa-apple"></i> Apple Music
-                </a>
-                <a href="https://www.saavn.com/s/artist/feeling-joy-albums/e4wBIn0DC9k_" class="link-item" style="background: rgba(43, 182, 115, 0.1);" target="_blank">
-                    <i class="fas fa-music"></i> JioSaavn
-                </a>
-                <a href="https://youtube.com/@feeling-joy/" class="link-item yt" target="_blank">
-                    <i class="fab fa-youtube"></i> YouTube Channel
-                </a>
-                <a href="https://www.instagram.com/feeling.joy/" class="link-item ig" target="_blank">
-                    <i class="fab fa-instagram"></i> Instagram
-                </a>
-                <a href="https://www.facebook.com/FEELING.JOYY/" class="link-item fb" target="_blank">
-                    <i class="fab fa-facebook"></i> Facebook
-                </a>
-            </div>
-        </div>
-
-        <div class="footer">
-            © 2026 FEELING JOY. All Rights Reserved.
-        </div>
+    <!-- Loading Screen Intro -->
+    <div id="loader">
+        <div class="loader-text">FEELING JOY</div>
     </div>
+
+    <!-- Header / Image Area -->
+    <header class="hero">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <div class="artist-name">
+                    FEELING JOY <i class="fas fa-check-circle blue-tick"></i>
+                </div>
+                <div class="tagline">Born: 1999 • Writer, Composer</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="content">
+        
+        <!-- Music Platforms (Play Icons) -->
+        <a href="https://open.spotify.com/artist/6WHHDHGQu5IxDG32UZ8ug9" class="link-item" target="_blank">
+            <div class="link-left"><i class="fab fa-spotify link-icon spot-color"></i> Spotify</div>
+            <div class="action-btn"><i class="fas fa-play" style="margin-left: 3px;"></i></div>
+        </a>
+        
+        <a href="https://music.youtube.com/channel/UCZHv80xS1WdJA7_iewvOy-w" class="link-item" target="_blank">
+            <div class="link-left"><i class="fab fa-youtube link-icon yt-color"></i> YouTube Music</div>
+            <div class="action-btn"><i class="fas fa-play" style="margin-left: 3px;"></i></div>
+        </a>
+
+        <a href="https://music.apple.com/au/artist/feeling-joy/1727533283" class="link-item" target="_blank">
+            <div class="link-left"><i class="fab fa-apple link-icon apple-color"></i> Apple Music</div>
+            <div class="action-btn"><i class="fas fa-play" style="margin-left: 3px;"></i></div>
+        </a>
+
+        <a href="https://www.saavn.com/s/artist/feeling-joy-albums/e4wBIn0DC9k_" class="link-item" target="_blank">
+            <div class="link-left"><i class="fas fa-music link-icon jio-color"></i> JioSaavn</div>
+            <div class="action-btn"><i class="fas fa-play" style="margin-left: 3px;"></i></div>
+        </a>
+
+        <!-- Social Platforms (Arrow Icons) -->
+        <a href="https://youtube.com/@feeling-joy/" class="link-item" target="_blank">
+            <div class="link-left"><i class="fab fa-youtube link-icon yt-color"></i> YouTube Channel</div>
+            <div class="action-btn"><i class="fas fa-chevron-right"></i></div>
+        </a>
+
+        <a href="https://www.instagram.com/feeling.joy/" class="link-item" target="_blank">
+            <div class="link-left"><i class="fab fa-instagram link-icon ig-color"></i> Instagram</div>
+            <div class="action-btn"><i class="fas fa-chevron-right"></i></div>
+        </a>
+
+        <a href="https://www.facebook.com/FEELING.JOYY/" class="link-item" target="_blank">
+            <div class="link-left"><i class="fab fa-facebook link-icon fb-color"></i> Facebook</div>
+            <div class="action-btn"><i class="fas fa-chevron-right"></i></div>
+        </a>
+
+        <div class="footer">© 2026 FEELING JOY. All Rights Reserved.</div>
+    </main>
 
 </body>
 </html>

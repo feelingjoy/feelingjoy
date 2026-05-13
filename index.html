@@ -3,50 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FEELING JOY | Official</title>
+    <title>FEELING JOY | Official Artist</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root { --glass: rgba(255, 255, 255, 0.05); }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, sans-serif; }
         body { background: #000; color: #fff; min-height: 100vh; }
 
-        /* Shining Text Loader */
+        /* Loader */
         #loader { position: fixed; inset: 0; background: #000; z-index: 9999; display: flex; justify-content: center; align-items: center; animation: fadeOut 1.5s ease 1s forwards; }
         .shimmer { font-size: 28px; font-weight: 800; background: linear-gradient(90deg, #444, #fff, #444); background-size: 200%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shine 2s linear infinite; }
         @keyframes shine { to { background-position: 200% center; } }
         @keyframes fadeOut { to { opacity: 0; visibility: hidden; } }
 
-        /* Hero Image with Smooth Blend */
+        /* Hero */
         .hero-container { position: relative; width: 100%; aspect-ratio: 16 / 9; }
         .hero-img { width: 100%; height: 100%; object-fit: cover; }
-        .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, #000 0%, rgba(0,0,0,0.2) 60%, transparent 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 30px; }
+        .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, #000 0%, rgba(0,0,0,0.3) 50%, transparent 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 30px; }
         
-        .name { font-size: 30px; font-weight: 800; display: flex; align-items: center; gap: 8px; }
-        .blue-tick { color: #0095f6; font-size: 20px; }
-        .tagline { color: #aaa; margin-top: 5px; }
+        .name { font-size: 28px; font-weight: 800; display: flex; align-items: center; gap: 8px; }
+        .blue-tick { color: #0095f6; font-size: 18px; }
+        .tagline { color: #ccc; margin-top: 5px; font-size: 14px; }
 
         .main-container { padding: 20px; }
+        .about-section { background: rgba(255,255,255,0.05); padding: 20px; border-radius: 20px; margin-bottom: 30px; border: 1px solid rgba(255,255,255,0.1); }
+        .about-section p { font-size: 14px; color: #ddd; line-height: 1.5; }
 
-        /* Shining Border Links */
-        .link-item { 
-            position: relative; display: flex; align-items: center; justify-content: space-between; 
-            padding: 18px 22px; border-radius: 20px; background: var(--glass); 
-            margin-bottom: 15px; text-decoration: none; color: #fff;
-            border: 1px solid rgba(255,255,255,0.1); transition: 0.3s;
-        }
-        .link-item::before {
-            content: ""; position: absolute; inset: -1px; border-radius: 20px;
-            padding: 1px; background: linear-gradient(45deg, #000, #444, #000);
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor; mask-composite: exclude;
-            animation: borderRotate 4s linear infinite;
-        }
-        @keyframes borderRotate { from { filter: hue-rotate(0deg); } to { filter: hue-rotate(360deg); } }
+        .section-title { color: #555; font-size: 12px; text-transform: uppercase; margin: 20px 0 10px 5px; }
+
+        /* Glowing Border Links */
+        .link-item { position: relative; display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; border-radius: 20px; background: rgba(255,255,255,0.03); margin-bottom: 12px; text-decoration: none; color: #fff; border: 1px solid rgba(255,255,255,0.1); }
+        .link-item::before { content: ""; position: absolute; inset: -1px; border-radius: 20px; padding: 1px; background: linear-gradient(45deg, #333, #fff, #333); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); mask-composite: exclude; animation: rotate 3s linear infinite; }
+        @keyframes rotate { from { filter: hue-rotate(0deg); } to { filter: hue-rotate(360deg); } }
 
         .link-left { display: flex; align-items: center; gap: 15px; font-weight: 600; }
-        .play-btn { width: 30px; height: 30px; border-radius: 50%; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; }
-        
+        .play-btn { width: 28px; height: 28px; border-radius: 50%; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; }
+
         .footer { margin: 40px 0; text-align: center; }
         .dev-box { display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.05); padding: 10px 20px; border-radius: 50px; text-decoration: none; color: #fff; border: 1px solid rgba(255,255,255,0.1); }
         .dev-box img { width: 28px; height: 28px; border-radius: 50%; }
@@ -65,23 +56,21 @@
     </div>
 
     <main class="main-container">
-        <!-- Links -->
-        <a href="https://open.spotify.com/artist/6WHHDHGQu5IxDG32UZ8ug9" class="link-item">
-            <div class="link-left"><i class="fab fa-spotify" style="color:#1DB954"></i> Spotify</div>
-            <div class="play-btn"><i class="fas fa-play" style="font-size: 10px;"></i></div>
-        </a>
-        <a href="https://music.youtube.com/channel/UCZHv80xS1WdJA7_iewvOy-w" class="link-item">
-            <div class="link-left"><i class="fab fa-youtube-music" style="color:#FF0000"></i> YouTube Music</div>
-            <div class="play-btn"><i class="fas fa-play" style="font-size: 10px;"></i></div>
-        </a>
-        <a href="https://youtube.com/@feeling-joy/" class="link-item">
-            <div class="link-left"><i class="fab fa-youtube" style="color:#FF0000"></i> YouTube</div>
-            <div class="play-btn"><i class="fas fa-play" style="font-size: 10px;"></i></div>
-        </a>
-        <a href="mailto:feelingjoy.official@gmail.com" class="link-item">
-            <div class="link-left"><i class="fas fa-envelope" style="color:#fbbc05"></i> Mail Me</div>
-            <div class="play-btn"><i class="fas fa-arrow-right" style="font-size: 10px;"></i></div>
-        </a>
+        <div class="about-section">
+            <p>Born in 1999. Dedicated to music production and artistic expression. Bringing emotions to life through sound.</p>
+        </div>
+
+        <div class="section-title">Music Stores</div>
+        <a href="https://open.spotify.com/artist/6WHHDHGQu5IxDG32UZ8ug9" class="link-item"><div class="link-left"><i class="fab fa-spotify" style="color:#1DB954"></i> Spotify</div><div class="play-btn"><i class="fas fa-play" style="font-size: 8px;"></i></div></a>
+        <a href="https://music.youtube.com/channel/UCZHv80xS1WdJA7_iewvOy-w" class="link-item"><div class="link-left"><i class="fab fa-youtube" style="color:#FF0000"></i> YT Music</div><div class="play-btn"><i class="fas fa-play" style="font-size: 8px;"></i></div></a>
+        <a href="https://music.apple.com/au/artist/feeling-joy/1727533283" class="link-item"><div class="link-left"><i class="fab fa-apple" style="color:#fff"></i> Apple Music</div><div class="play-btn"><i class="fas fa-play" style="font-size: 8px;"></i></div></a>
+        <a href="https://www.saavn.com/s/artist/feeling-joy-albums/e4wBIn0DC9k_" class="link-item"><div class="link-left"><i class="fas fa-music" style="color:#2bb673"></i> JioSaavn</div><div class="play-btn"><i class="fas fa-play" style="font-size: 8px;"></i></div></a>
+
+        <div class="section-title">Socials & Contact</div>
+        <a href="https://youtube.com/@feeling-joy/" class="link-item"><div class="link-left"><i class="fab fa-youtube" style="color:#FF0000"></i> YouTube</div></a>
+        <a href="https://www.instagram.com/feeling.joy/" class="link-item"><div class="link-left"><i class="fab fa-instagram" style="color:#E1306C"></i> Instagram</div></a>
+        <a href="https://www.facebook.com/FEELING.JOYY/" class="link-item"><div class="link-left"><i class="fab fa-facebook" style="color:#1877F2"></i> Facebook</div></a>
+        <a href="mailto:feelingjoy.official@gmail.com" class="link-item"><div class="link-left"><i class="fas fa-envelope" style="color:#fbbc05"></i> Mail Me</div></a>
 
         <footer class="footer">
             <a href="https://techaddicted.in" class="dev-box">

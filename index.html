@@ -3,66 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FEELING JOY | Official Artist</title>
+    <title>FEELING JOY | Official</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root { --glass: rgba(255, 255, 255, 0.08); --blur: blur(20px); }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, sans-serif; }
         body { background: #000; color: #fff; min-height: 100vh; }
 
-        /* Loader */
-        #loader { position: fixed; inset: 0; background: #000; z-index: 9999; display: flex; justify-content: center; align-items: center; animation: fadeOut 1s ease 1s forwards; }
+        /* Loading */
+        #loader { position: fixed; inset: 0; background: #000; z-index: 9999; display: flex; justify-content: center; align-items: center; animation: fadeOut 1s ease 0.8s forwards; }
         @keyframes fadeOut { to { opacity: 0; visibility: hidden; } }
 
-        /* Hero */
-        .hero { width: 100%; height: 50vh; background: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgrn_UOaM66pjG71MKxAW_r2QUO-ie_1fMbv8fn3Pv95bYBJBl-gialHXzXxTQivjeJmLPs1RAM2HMwo-CpOEYmuCbLIHImRKZLy1bSdv68_rrkWra9r86oyPQybstX7HsmnonEsmTzDrP3VRnzrT6ggftJZZN2XHeaRfRNg0jpGOQduHavOeeKYqbmIlqN/s16000/18227.png') center/cover; }
+        /* Hero Image - Maintains aspect ratio, no hard crop */
+        .hero-container { position: relative; width: 100%; height: 50vh; overflow: hidden; }
+        .hero-img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
         
-        .main-container { padding: 20px; margin-top: -50px; }
-        .profile-info { margin-bottom: 25px; }
-        .name { font-size: 28px; font-weight: 800; display: flex; align-items: center; gap: 8px; }
+        /* Glassy Gradient Overlay for Text */
+        .hero-overlay { 
+            position: absolute; bottom: 0; left: 0; right: 0; height: 40%;
+            background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 60%, transparent 100%);
+            display: flex; flex-direction: column; justify-content: flex-end; padding: 20px;
+        }
+
+        .name-box h1 { font-size: 28px; font-weight: 800; display: flex; align-items: center; gap: 8px; }
         .blue-tick { color: #0095f6; font-size: 18px; }
-        .tagline { font-size: 15px; color: #a1a1a6; margin: 5px 0; }
-        .about { font-size: 14px; color: #888; line-height: 1.5; }
+        .tagline { font-size: 14px; color: #ccc; margin-top: 4px; }
+
+        .main-container { padding: 20px; }
+        .about-text { color: #888; font-size: 14px; margin-bottom: 25px; line-height: 1.5; }
+        .section-header { font-size: 14px; font-weight: 700; color: #555; text-transform: uppercase; margin: 20px 0 10px 5px; letter-spacing: 1px; }
 
         /* Links */
-        .link-group { margin-top: 25px; display: flex; flex-direction: column; gap: 12px; }
-        .link-item { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; border-radius: 16px; background: var(--glass); backdrop-filter: var(--blur); border: 1px solid rgba(255,255,255,0.1); text-decoration: none; color: #fff; }
-        .link-left { display: flex; align-items: center; gap: 14px; font-weight: 600; }
+        .link-item { display: flex; align-items: center; justify-content: space-between; padding: 16px; border-radius: 14px; background: #111; margin-bottom: 10px; text-decoration: none; color: #fff; transition: 0.2s; }
+        .link-item:hover { background: #1a1a1a; }
+        .link-left { display: flex; align-items: center; gap: 12px; font-weight: 600; font-size: 15px; }
 
-        /* Footer */
-        .footer { margin-top: 40px; text-align: center; padding-bottom: 30px; }
-        .dev-box { display: inline-flex; align-items: center; gap: 10px; background: var(--glass); padding: 8px 15px; border-radius: 50px; text-decoration: none; color: #fff; }
-        .dev-box img { width: 30px; height: 30px; border-radius: 50%; }
-        .dev-box span { font-size: 12px; }
+        .footer { text-align: center; margin-top: 40px; padding-bottom: 30px; }
+        .dev-box { display: inline-flex; align-items: center; gap: 8px; opacity: 0.6; }
+        .dev-box img { width: 24px; height: 24px; border-radius: 50%; }
     </style>
 </head>
 <body>
 
     <div id="loader"><div style="font-weight:800; letter-spacing:4px;">FEELING JOY</div></div>
 
-    <header class="hero"></header>
+    <div class="hero-container">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgrn_UOaM66pjG71MKxAW_r2QUO-ie_1fMbv8fn3Pv95bYBJBl-gialHXzXxTQivjeJmLPs1RAM2HMwo-CpOEYmuCbLIHImRKZLy1bSdv68_rrkWra9r86oyPQybstX7HsmnonEsmTzDrP3VRnzrT6ggftJZZN2XHeaRfRNg0jpGOQduHavOeeKYqbmIlqN/s16000/18227.png" class="hero-img">
+        <div class="hero-overlay">
+            <div class="name-box">
+                <h1>FEELING JOY <i class="fas fa-check-circle blue-tick"></i></h1>
+                <p class="tagline">Writer | Composer</p>
+            </div>
+        </div>
+    </div>
 
     <main class="main-container">
-        <div class="profile-info">
-            <h1 class="name">FEELING JOY <i class="fas fa-check-circle blue-tick"></i></h1>
-            <p class="tagline">Writer | Composer</p>
-            <p class="about">Born in 1999. Dedicated to music production and artistic expression. Creating soundscapes that connect.</p>
-        </div>
+        <p class="about-text">Born in 1999. Dedicated to music production and artistic expression. Creating soundscapes that connect.</p>
 
-        <div class="link-group">
-            <a href="https://open.spotify.com/artist/6WHHDHGQu5IxDG32UZ8ug9" class="link-item"><div class="link-left"><i class="fab fa-spotify" style="color:#1DB954"></i> Spotify</div><i class="fas fa-chevron-right"></i></a>
-            <a href="https://music.youtube.com/channel/UCZHv80xS1WdJA7_iewvOy-w" class="link-item"><div class="link-left"><i class="fab fa-youtube" style="color:#FF0000"></i> YouTube Music</div><i class="fas fa-chevron-right"></i></a>
-            <a href="https://music.apple.com/au/artist/feeling-joy/1727533283" class="link-item"><div class="link-left"><i class="fab fa-apple" style="color:#fff"></i> Apple Music</div><i class="fas fa-chevron-right"></i></a>
-            <a href="https://www.saavn.com/s/artist/feeling-joy-albums/e4wBIn0DC9k_" class="link-item"><div class="link-left"><i class="fas fa-music" style="color:#2bb673"></i> JioSaavn</div><i class="fas fa-chevron-right"></i></a>
-            <a href="https://www.instagram.com/feeling.joy/" class="link-item"><div class="link-left"><i class="fab fa-instagram" style="color:#E1306C"></i> Instagram</div><i class="fas fa-chevron-right"></i></a>
-            <a href="https://www.facebook.com/FEELING.JOYY/" class="link-item"><div class="link-left"><i class="fab fa-facebook" style="color:#1877F2"></i> Facebook</div><i class="fas fa-chevron-right"></i></a>
-            <a href="mailto:feelingjoy.official@gmail.com" class="link-item"><div class="link-left"><i class="fas fa-envelope" style="color:#fbbc05"></i> Mail Me</div><i class="fas fa-chevron-right"></i></a>
-        </div>
+        <div class="section-header">Social & Contact</div>
+        <a href="https://www.instagram.com/feeling.joy/" class="link-item"><div class="link-left"><i class="fab fa-instagram" style="color:#E1306C"></i> Instagram</div></a>
+        <a href="https://www.facebook.com/FEELING.JOYY/" class="link-item"><div class="link-left"><i class="fab fa-facebook" style="color:#1877F2"></i> Facebook</div></a>
+        <a href="mailto:feelingjoy.official@gmail.com" class="link-item"><div class="link-left"><i class="fas fa-envelope" style="color:#fbbc05"></i> Mail Me</div></a>
+
+        <div class="section-header">Music Stores</div>
+        <a href="https://open.spotify.com/artist/6WHHDHGQu5IxDG32UZ8ug9" class="link-item"><div class="link-left"><i class="fab fa-spotify" style="color:#1DB954"></i> Spotify</div></a>
+        <a href="https://music.youtube.com/channel/UCZHv80xS1WdJA7_iewvOy-w" class="link-item"><div class="link-left"><i class="fab fa-youtube" style="color:#FF0000"></i> YouTube Music</div></a>
+        <a href="https://music.apple.com/au/artist/feeling-joy/1727533283" class="link-item"><div class="link-left"><i class="fab fa-apple" style="color:#fff"></i> Apple Music</div></a>
+        <a href="https://www.saavn.com/s/artist/feeling-joy-albums/e4wBIn0DC9k_" class="link-item"><div class="link-left"><i class="fas fa-music" style="color:#2bb673"></i> JioSaavn</div></a>
 
         <footer class="footer">
             <a href="https://techaddicted.in" class="dev-box">
                 <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgrn_UOaM66pjG71MKxAW_r2QUO-ie_1fMbv8fn3Pv95bYBJBl-gialHXzXxTQivjeJmLPs1RAM2HMwo-CpOEYmuCbLIHImRKZLy1bSdv68_rrkWra9r86oyPQybstX7HsmnonEsmTzDrP3VRnzrT6ggftJZZN2XHeaRfRNg0jpGOQduHavOeeKYqbmIlqN/s16000/18227.png">
-                <span>Designed & Coded by Tech Addicted</span>
+                <span>Coded by Tech Addicted</span>
             </a>
         </footer>
     </main>

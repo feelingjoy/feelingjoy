@@ -3,71 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FEELING JOY | Official</title>
+    <title>FEELING JOY | Official Artist</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, sans-serif; }
-        body { background-color: #000; color: #fff; min-height: 100vh; display: flex; flex-direction: column; }
-        
-        /* Loading Animation */
+        :root { --glass: rgba(255, 255, 255, 0.08); --blur: blur(20px); }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
+        body { background: #000; color: #fff; min-height: 100vh; }
+
+        /* Loader */
         #loader { position: fixed; inset: 0; background: #000; z-index: 9999; display: flex; justify-content: center; align-items: center; animation: fadeOut 1s ease 1s forwards; }
-        .loader-text { font-size: 20px; font-weight: 700; letter-spacing: 3px; color: #fff; }
         @keyframes fadeOut { to { opacity: 0; visibility: hidden; } }
 
-        /* Hero Area */
-        .hero { width: 100%; height: 50vh; background: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgrn_UOaM66pjG71MKxAW_r2QUO-ie_1fMbv8fn3Pv95bYBJBl-gialHXzXxTQivjeJmLPs1RAM2HMwo-CpOEYmuCbLIHImRKZLy1bSdv68_rrkWra9r86oyPQybstX7HsmnonEsmTzDrP3VRnzrT6ggftJZZN2XHeaRfRNg0jpGOQduHavOeeKYqbmIlqN/s16000/18227.png') center/cover no-repeat; }
+        /* Hero */
+        .hero { width: 100%; height: 50vh; background: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgrn_UOaM66pjG71MKxAW_r2QUO-ie_1fMbv8fn3Pv95bYBJBl-gialHXzXxTQivjeJmLPs1RAM2HMwo-CpOEYmuCbLIHImRKZLy1bSdv68_rrkWra9r86oyPQybstX7HsmnonEsmTzDrP3VRnzrT6ggftJZZN2XHeaRfRNg0jpGOQduHavOeeKYqbmIlqN/s16000/18227.png') center/cover; }
         
-        .content { padding: 30px 20px; flex: 1; }
-        .name-box { margin-bottom: 30px; }
-        .name-box h1 { font-size: 32px; font-weight: 800; display: flex; align-items: center; gap: 8px; }
-        .blue-tick { color: #0095f6; font-size: 20px; }
-        .tagline { color: #666; margin-top: 5px; }
+        .main-container { padding: 20px; margin-top: -50px; }
+        .profile-info { margin-bottom: 25px; }
+        .name { font-size: 28px; font-weight: 800; display: flex; align-items: center; gap: 8px; }
+        .blue-tick { color: #0095f6; font-size: 18px; }
+        .tagline { font-size: 15px; color: #a1a1a6; margin: 5px 0; }
+        .about { font-size: 14px; color: #888; line-height: 1.5; }
 
         /* Links */
-        .link-item { display: flex; align-items: center; justify-content: space-between; padding: 18px 20px; border-radius: 16px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); text-decoration: none; color: #fff; margin-bottom: 12px; transition: 0.3s; }
-        .link-item:hover { background: rgba(255,255,255,0.1); }
-        .link-left { display: flex; align-items: center; gap: 15px; font-weight: 600; }
+        .link-group { margin-top: 25px; display: flex; flex-direction: column; gap: 12px; }
+        .link-item { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; border-radius: 16px; background: var(--glass); backdrop-filter: var(--blur); border: 1px solid rgba(255,255,255,0.1); text-decoration: none; color: #fff; }
+        .link-left { display: flex; align-items: center; gap: 14px; font-weight: 600; }
 
-        /* Footer Credit */
-        .footer { margin-top: 50px; text-align: center; padding-bottom: 30px; }
-        .dev-box { display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.05); padding: 8px 15px; border-radius: 50px; text-decoration: none; color: #fff; }
-        .dev-box img { width: 30px; height: 30px; border-radius: 50%; object-fit: cover; }
-        .dev-box span { font-size: 12px; opacity: 0.7; }
+        /* Footer */
+        .footer { margin-top: 40px; text-align: center; padding-bottom: 30px; }
+        .dev-box { display: inline-flex; align-items: center; gap: 10px; background: var(--glass); padding: 8px 15px; border-radius: 50px; text-decoration: none; color: #fff; }
+        .dev-box img { width: 30px; height: 30px; border-radius: 50%; }
+        .dev-box span { font-size: 12px; }
     </style>
 </head>
 <body>
 
-    <div id="loader"><div class="loader-text">FEELING JOY</div></div>
+    <div id="loader"><div style="font-weight:800; letter-spacing:4px;">FEELING JOY</div></div>
 
     <header class="hero"></header>
 
-    <main class="content">
-        <div class="name-box">
-            <h1>FEELING JOY <i class="fas fa-check-circle blue-tick"></i></h1>
-            <p class="tagline">Writer | Composer | Producer</p>
+    <main class="main-container">
+        <div class="profile-info">
+            <h1 class="name">FEELING JOY <i class="fas fa-check-circle blue-tick"></i></h1>
+            <p class="tagline">Writer | Composer</p>
+            <p class="about">Born in 1999. Dedicated to music production and artistic expression. Creating soundscapes that connect.</p>
         </div>
 
-        <a href="https://open.spotify.com/artist/6WHHDHGQu5IxDG32UZ8ug9" class="link-item">
-            <div class="link-left"><i class="fab fa-spotify" style="color: #1DB954;"></i> Spotify</div>
-            <i class="fas fa-chevron-right" style="opacity: 0.5;"></i>
-        </a>
-        
-        <a href="https://music.youtube.com/channel/UCZHv80xS1WdJA7_iewvOy-w" class="link-item">
-            <div class="link-left"><i class="fab fa-youtube" style="color: #FF0000;"></i> YouTube Music</div>
-            <i class="fas fa-chevron-right" style="opacity: 0.5;"></i>
-        </a>
+        <div class="link-group">
+            <a href="https://open.spotify.com/artist/6WHHDHGQu5IxDG32UZ8ug9" class="link-item"><div class="link-left"><i class="fab fa-spotify" style="color:#1DB954"></i> Spotify</div><i class="fas fa-chevron-right"></i></a>
+            <a href="https://music.youtube.com/channel/UCZHv80xS1WdJA7_iewvOy-w" class="link-item"><div class="link-left"><i class="fab fa-youtube" style="color:#FF0000"></i> YouTube Music</div><i class="fas fa-chevron-right"></i></a>
+            <a href="https://music.apple.com/au/artist/feeling-joy/1727533283" class="link-item"><div class="link-left"><i class="fab fa-apple" style="color:#fff"></i> Apple Music</div><i class="fas fa-chevron-right"></i></a>
+            <a href="https://www.saavn.com/s/artist/feeling-joy-albums/e4wBIn0DC9k_" class="link-item"><div class="link-left"><i class="fas fa-music" style="color:#2bb673"></i> JioSaavn</div><i class="fas fa-chevron-right"></i></a>
+            <a href="https://www.instagram.com/feeling.joy/" class="link-item"><div class="link-left"><i class="fab fa-instagram" style="color:#E1306C"></i> Instagram</div><i class="fas fa-chevron-right"></i></a>
+            <a href="https://www.facebook.com/FEELING.JOYY/" class="link-item"><div class="link-left"><i class="fab fa-facebook" style="color:#1877F2"></i> Facebook</div><i class="fas fa-chevron-right"></i></a>
+            <a href="mailto:feelingjoy.official@gmail.com" class="link-item"><div class="link-left"><i class="fas fa-envelope" style="color:#fbbc05"></i> Mail Me</div><i class="fas fa-chevron-right"></i></a>
+        </div>
 
-        <a href="mailto:feelingjoy.official@gmail.com" class="link-item">
-            <div class="link-left"><i class="fas fa-envelope" style="color: #fbbc05;"></i> Email Me</div>
-            <i class="fas fa-chevron-right" style="opacity: 0.5;"></i>
-        </a>
-
-        <div class="footer">
+        <footer class="footer">
             <a href="https://techaddicted.in" class="dev-box">
                 <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgrn_UOaM66pjG71MKxAW_r2QUO-ie_1fMbv8fn3Pv95bYBJBl-gialHXzXxTQivjeJmLPs1RAM2HMwo-CpOEYmuCbLIHImRKZLy1bSdv68_rrkWra9r86oyPQybstX7HsmnonEsmTzDrP3VRnzrT6ggftJZZN2XHeaRfRNg0jpGOQduHavOeeKYqbmIlqN/s16000/18227.png">
-                <span>Coded by Tech Addicted</span>
+                <span>Designed & Coded by Tech Addicted</span>
             </a>
-        </div>
+        </footer>
     </main>
 
 </body>
